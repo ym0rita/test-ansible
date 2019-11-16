@@ -1,0 +1,11 @@
+#plugin_exclude: "plugin_bogo,plugin_pogo"
+dir_plugin_hoge:
+  - plugin_piyo
+  - plugin_fuga
+  - plugin_moyo
+  - plugin_bogo
+  - plugin_pogo
+plugin_excname: "{{ plugin_exclude.split(',') }}"
+
+plugin_install_list: "{{ dir_plugin_hoge | difference(plugin_excname) }}"
+plugin_uninstall_list: "{{ dir_plugin_hoge | intersect(plugin_excname) }}"

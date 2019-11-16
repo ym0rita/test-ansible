@@ -1,0 +1,10 @@
+- hosts: all
+  vars_files:
+    - vars/common.yml
+
+  tasks:
+    - name: test
+      become: yes
+      debug:
+        msg: "plugin install list: {{ plugin_install_list }} plugin uninstall list: {{ plugin_uninstall_list }}"
+      when: not plugin_exclude == "" 
