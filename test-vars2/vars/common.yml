@@ -1,0 +1,2 @@
+redmine_dist: "{{ redmine_version.split('-').0 }}"
+redmine_version_number: "{{ redmine_version.split('-').1 }}"

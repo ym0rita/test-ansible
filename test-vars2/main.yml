@@ -1,0 +1,10 @@
+- hosts: all
+  vars_files:
+    - vars/common.yml
+
+  tasks:
+    - name: test
+      become: yes
+      debug:
+        msg: "Redmine Distribution: {{ redmine_dist }} Version Number: {{ redmine_version_number }}"
+      when: not redmine_version == "" 
