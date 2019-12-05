@@ -8,9 +8,9 @@
       loop: "{{ dirs_hoge_plugin }}"
       register: st_exclude_plugin
 
-    - name debug results
+    - name: debug results
       debug:
-        msg: "register.results => {{ st_exclude_plugin.results }}"
+        msg: "register value => {{ st_exclude_plugin }}"
 
     - name: debug item & stat value
       loop: "{{ st_exclude_plugin.results }}"
