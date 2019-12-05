@@ -1,0 +1,15 @@
+- hosts: all
+  vars_files:
+    - vars/common.yml
+
+  tasks:
+    - name: check exclude_plugin plugin directory exists
+      stat: path={{ plugin_root }}/{{ item }}
+      loop: "{{ dirs_hoge_plugin }}"
+      register: st_exclude_plugin
+
+    - name: test debug
+      become: yes
+      loop: "{{ st_exclude_plugin.results }}"
+      debug:
+              msg: "{{ item.item }}:{{ item.stat.exists }}"

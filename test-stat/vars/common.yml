@@ -1,0 +1,5 @@
+plugin_root: /tmp/plugins
+dirs_hoge_plugin:
+  - aaa
+  - bbb
+  - ccc
