@@ -8,8 +8,11 @@
       loop: "{{ dirs_hoge_plugin }}"
       register: st_exclude_plugin
 
-    - name: test debug
-      become: yes
+    - name debug results
+      debug:
+        msg: "register.results => {{ st_exclude_plugin.results }}"
+
+    - name: debug item & stat value
       loop: "{{ st_exclude_plugin.results }}"
       debug:
-              msg: "{{ item.item }}:{{ item.stat.exists }}"
+        msg: "item =>  {{ item.item }}: value => {{ item.stat.exists }}"
